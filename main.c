@@ -1,15 +1,14 @@
-//산술연산자 활용//
+//두 개의 정수를 입력받고 5개의 산술연산자로 연산한 결과 출력//
+
 #include <stdio.h>
 
-int main (int argc, char *argv[]) {
-    int x,y,z,m;
-    int a,b,c;
-    x=2;
-    z=1;
-    a=3;
-    b=4;
-    c=5;
-    y=a*x*x + b*x + c;
-    m=(x+y+z)/3;
-    printf("y=%d, m=%d\n", y, m);
+int main(void) {
+    int n1, n2;
+
+    scanf("%i %i", &n1, &n2);
+    printf("+ result is %d\n", n1 + n2);
+    printf("- result is %d\n", n1 - n2);
+    printf("* result is %d\n", n1 * n2);
+    printf("/ result is %f\n", (float)n1 / n2);
+    printf("%% result is %d\n", n1 % n2);
 }
