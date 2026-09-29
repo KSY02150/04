@@ -1,14 +1,13 @@
-//두 개의 정수를 입력받고 5개의 산술연산자로 연산한 결과 출력//
-
+//초를 시간(분:초)로 표기, 초를 나타내는 한 개의 정수를 입력받아 분:초를 각각 계산하여 표기한다//
 #include <stdio.h>
 
 int main(void) {
-    int n1, n2;
+    int sec, min, remain_sec;
 
-    scanf("%i %i", &n1, &n2);
-    printf("+ result is %d\n", n1 + n2);
-    printf("- result is %d\n", n1 - n2);
-    printf("* result is %d\n", n1 * n2);
-    printf("/ result is %f\n", (float)n1 / n2);
-    printf("%% result is %d\n", n1 % n2);
+    printf("input the second :");
+    scanf("%d", &sec);
+    min = sec / 60;
+    remain_sec = sec % 60;
+    printf("the time is %d : %d\n", min, remain_sec);
+    return 0;
 }
