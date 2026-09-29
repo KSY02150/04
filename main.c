@@ -1,16 +1,21 @@
-//년도를 정수로 입력받아 윤년인지 여부를 0과 1로 출력하는 프로그램 만들기//
+//입력된 숫자의 bit상에서의 1의 개수 계산//
 #include <stdio.h>
 
-int main(void) {
-    int year, leap;
+int main(int argc, char *argv[]) {
+    unsigned int x;
+    int b;
 
-    printf("input the year: ");
-    scanf("%d", &year);
+    printf("input a number: ");
+    scanf("%u", &x);
 
-    if ((year % 4 == 0 && year % 100!= 0) || (year % 400 == 0))
-        leap = 1;
-    else
-        leap = 0;
-    printf("is the year %d the leap year? : %d\n", year, leap);
+    for (b=0; x != 0; x >>= 1)
+    {
+        if (x &1)
+        {
+            b++;
+        }
+    }
+    
+    printf("The result is : %i\n", b);
     return 0;
 }
