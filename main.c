@@ -1,21 +1,17 @@
-//입력된 숫자의 bit상에서의 1의 개수 계산//
+//입력받은 초(정수)를 (시:분:초)로 변환해 표기하는 프로그램//
+
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-    unsigned int x;
-    int b;
+int main(void) {
+    int sec, hour, min;
 
-    printf("input a number: ");
-    scanf("%u", &x);
+    printf("input the second : ");
+    scanf("%d", &sec);
 
-    for (b=0; x != 0; x >>= 1)
-    {
-        if (x &1)
-        {
-            b++;
-        }
-    }
-    
-    printf("The result is : %i\n", b);
+    hour = sec / 3600;
+    min = (sec % 3600) / 60;
+    sec = sec % 60;
+
+    printf("The time for %d second is %d : %d : %d\n", sec, hour, min, sec);
     return 0;
 }
