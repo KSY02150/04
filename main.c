@@ -1,13 +1,16 @@
-//초를 시간(분:초)로 표기, 초를 나타내는 한 개의 정수를 입력받아 분:초를 각각 계산하여 표기한다//
+//년도를 정수로 입력받아 윤년인지 여부를 0과 1로 출력하는 프로그램 만들기//
 #include <stdio.h>
 
 int main(void) {
-    int sec, min, remain_sec;
+    int year, leap;
 
-    printf("input the second :");
-    scanf("%d", &sec);
-    min = sec / 60;
-    remain_sec = sec % 60;
-    printf("the time is %d : %d\n", min, remain_sec);
+    printf("input the year: ");
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100!= 0) || (year % 400 == 0))
+        leap = 1;
+    else
+        leap = 0;
+    printf("is the year %d the leap year? : %d\n", year, leap);
     return 0;
 }
